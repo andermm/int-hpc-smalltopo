@@ -1,0 +1,78 @@
+{
+  "target": "bmv2",
+  "p4info": "build/int.p4info",
+  "bmv2_json": "build/int.json",
+  "table_entries": [
+    {
+      "table": "IntEgress.swtrace",
+      "default_action": true,
+      "action_name": "IntEgress.add_swtrace",
+      "action_params": {
+         "swid": 5
+       }
+    },
+
+    {
+      "table": "IntIngress.ipv4_lpm",
+      "match": {
+      "hdr.ipv4.dstAddr": ["10.0.3.0", 24]
+      },
+      "action_name": "IntIngress.IPv4Forwarding",
+      "action_params": {
+      "dstAddr": "00:00:00:00:03:01",
+      "port": 4
+        }
+    },
+
+
+    {
+      "table": "IntIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.5.5", 32]
+      },
+      "action_name": "IntIngress.IPv4Forwarding",
+      "action_params": {
+      "dstAddr": "00:00:00:00:05:05",
+      "port": 1	
+      }
+    },
+
+
+    {
+      "table": "IntIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.5.6", 32]
+      },
+      "action_name": "IntIngress.IPv4Forwarding",
+      "action_params": {
+      "dstAddr": "00:00:00:00:05:06",
+      "port": 2	
+      }
+    },
+   
+    {
+      "table": "IntIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.6.0", 24]
+      },
+      "action_name": "IntIngress.IPv4Forwarding",
+      "action_params": {
+        "dstAddr": "00:00:00:06:09:00", 
+	"port": 5
+      }
+    },
+
+	
+    {
+      "table": "IntIngress.ipv4_lpm",
+      "match": {
+        "hdr.ipv4.dstAddr": ["10.0.4.0", 24]
+      },
+      "action_name": "IntIngress.IPv4Forwarding",
+      "action_params": {
+        "dstAddr": "00:00:00:04:03:00", 
+	"port": 4
+      }
+    }
+  ]
+}

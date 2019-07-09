@@ -6,7 +6,7 @@
    
 #define COMPILETIME "09 Jul 2019"
 #define NPBVERSION "3.4"
-#define MPICC "mpicc"
+#define MPICC "/tmp/install/bin/./scorep mpicc"
 #define CFLAGS "-O3"
 #define CLINK "$(MPICC)"
 #define CLINKFLAGS "$(CFLAGS)"

@@ -75,7 +75,7 @@ FLINKFLAGS = $(FFLAGS)
 #---------------------------------------------------------------------------
 # This is the C compiler used for MPI programs
 #---------------------------------------------------------------------------
-MPICC = mpicc
+MPICC = /tmp/install/bin/./scorep mpicc
 # This links MPI C programs; usually the same as ${MPICC}
 CLINK	= $(MPICC)
 

@@ -1,15 +1,15 @@
 #!/bin/bash
 
 #NPB-MPI
-mpirun -np 2 -machinefile nodes is.S.x >> is.S.log  &
+#mpirun -np 2 -machinefile nodes is.W.x >> is.W.1500.log  &
 
 #Send/receive
-sudo ./send.py h5 "OK" 600 &
+sudo ./send.py h5 "OK" 60000 &
 
 #Iperf
-sleep 5
-ssh h6 iperf -c h2 -u -t 50 &
-sleep 55
+sleep 20
+#ssh h6 iperf3 -c h2 -u -t 20 -b 1500M  &
+#sleep 40
 
 #Kill send 
 kisend=$(pidof python ./send.py)

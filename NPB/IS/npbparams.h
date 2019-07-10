@@ -4,7 +4,7 @@
    It sets the number of processors and the class of the NPB
    in this directory. Do not modify it by hand.   */
    
-#define COMPILETIME "09 Jul 2019"
+#define COMPILETIME "10 Jul 2019"
 #define NPBVERSION "3.4"
 #define MPICC "/tmp/install/bin/./scorep mpicc"
 #define CFLAGS "-O3"

@@ -68,7 +68,7 @@ def main():
     try:
       for i in range(int(sys.argv[3])):
         sendp(pkt, iface=iface)
-        sleep(0.1)
+        sleep(0.001)
     except KeyboardInterrupt:
         raise
 
